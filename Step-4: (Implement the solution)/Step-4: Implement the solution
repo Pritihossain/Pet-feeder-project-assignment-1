@@ -1,1 +1,31 @@
+Step-4: Implement the solution:
+Pseudocode:
+Start
+1. Wait for the Trigger:
+       a. IF (Current Time matches Scheduled Feeding Time)
+           OR (Manual Feed Button pressed)  
+       b. Proceed to Step 2  
+       c. ELSE (Loop back and wait)
+2. Check Hopper Level:
+       a. IF (Hopper Low)  
+       b. Turn ON Red LED, Sound Buzzer, Log "Hopper Low", END.  
+       c.  ELSE (Proceed to Step 3)
+3. Check for Jam:
+       a. IF (Jam Detected)  
+       b. Turn ON Red LED, Sound Buzzer, Log "Jam Detected", END.  
+       c. ELSE (Proceed to Step 4)
+4. Dispense Food:
+        a. Activate Motor for calibrated duration (e.g., 1200ms).
+5. Verify Food Dispensed:
+       a. IF (Food Detected in Bowl OR Bowl Weight increased)  
+       b. Proceed to Step 6.  
+       c. ELSE (Turn ON Red LED, Sound Buzzer, Log "No Food Dispensed", END)
+6. Start Eating Timer:
+     a. Begin countdown (e.g., 30 minutes).
+7. Check Food Consumption:
+     a. IF (Bowl Weight decreased ≥ Minimum Threshold OR IR Sensor shows food cleared)  
+     b. Turn ON Green LED, Log "Feeding Successful", END.  
+     c.  ELSE  (Turn ON Red LED, Sound Buzzer, Log "Food Not Eaten", END)
+END
+
 
