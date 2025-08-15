@@ -1,1 +1,20 @@
+Step- 5: Test and Refine the Solution (Debug & Verify)
+The system was tested with several scenarios:
+
+(1)Pet eats as expected – triggers at feeding time, hopper and jam function properly, motor dispenses food, and consumes ≥25 g within 30 minutes. 
+Observed output: green LED, log "Feeding Successful" – matched expectations. 
+(2)Pet does not eat – feeding occurs, but weight change is <25 g after 30 minutes. The red LED, buzzer, and log "Food Not Eaten" meet expectations. 
+Observed output: matched expectations. 
+(3)Hopper empty – hopper sensor low at trigger, red LED, buzzer, and log “Hopper Low”       
+ Observed output: matched expectations. 
+(4) Jam detected – jam sensor active before dispensing, red LED, buzzer, log “Jam Detected” 
+  Observed output: matched expectations. 
+(5) Dispense fails – The motor operates, but the weight remains the same, and no food is detected. The red LED, buzzer, and log that reads "No Food Dispensed" 
+Observed output: matched expectations.
+
+Discussion about logic:
+The system successfully handles all possible scenarios, producing the correct outputs for each case. Alerts are triggered at the right time, preventing unnecessary motor use. The design is modular and can be easily adapted or adjusted to meet different user requirements.
+
+The following improvements are recommended: 
+Calibrating motor time and thresholds per pet type, adding an extra eating time for slow eaters, debouncing the manual button to prevent accidental feeds, upgrading log detail for troubleshooting, setting a daily feed limit for safety, and adding a single automatic retry if dispensing fails. With these modifications, the system would remain inexpensive while becoming more dependable and user-friendly.
 
