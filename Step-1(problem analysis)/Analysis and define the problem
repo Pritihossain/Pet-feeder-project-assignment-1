@@ -1,1 +1,19 @@
+Step- 1: Understanding and Defining the Problem Analysis:
+The objective of the problem is to design an automated pet feeder that is affordable and can safely feed cats and dogs. The automatic pet feeder must identify whether food has been consumed, serving dogs and cats with the right amount of food at the specified time, and provide a signal in case of emergencies, such as no food dispensed, overloading of food, or mechanical failure. The system must be affordable, programmable, and simple to execute with the help of standard servo motors and sensors.
+
+Key features the feeder must have:
+Scheduled feeding: Each feeder can dispense different amounts of food at set times throughout the day.
+Food consumption monitoring: The system determines whether the bowl weight decreases sufficiently to determine whether the meal is consumed within a predetermined period of time, for example, 30 minutes.
+Actuator control: A motor (servo ) dispenses the correct amount of food by rotating at a set angle or operating for a specified duration.
+Alert light status:
+Green LED: When feeding is successful or a meal is delivered and consumed on schedule, the green LED status light goes on.
+Red LED: If there is an issue, for instance, no food provided, jam, an empty storage, or food not consumed, the red LED goes on.
+Buzzer alert and system log: Give an alert with beeps and keep records of the incident for future analysis.
+Log system: Time, food quantity, outcome, and any issues for every feeding are all saved with a log system.
+Manual feeding control: Instantly feed the pet using the manual feed button, but first must need to check for any issues.
+Food dispensing verification: Following feeding, the system uses an infrared sensor that detects the presence of food or a weight sensor that makes the bowl heavier to determine whether food is in the bowl. 
+
+Assumptions and limitations:
+Assumptions: Using a servo motor with open-loop timing, the feeder will only dispense dry kibble in a set size. It will make use of a hopper level sensor, a load cell or infrared sensor at the bowl, and an optional jam detection switch. The feeding schedule will be stored locally on a 24-hour clock with LEDs and an alert buzzer by a low-power microcontroller with little memory. When the bowl weight is decreased by ≥ M grams or the IR sensor clears in a predetermined amount of time, for example, 30 minutes, food is deemed eaten.
+Limitations: The feeder can only feed one animal at a time and is intended for indoor use only. It depends on timed operation because of its open-loop motor control, which makes it impossible to measure the dispenser's precise movement. The quantity of feeding events or logs that can be stored may be limited by memory, and in the absence of cloud or app connectivity, all alerts and logs will only be accessible via local indicators, such as buzzers, LEDs, or on-device storage.
 
